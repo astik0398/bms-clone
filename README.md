@@ -16,7 +16,7 @@ Seat Selection: Users can click on available seats to select them. Selected seat
 Book Now: After selecting seats, users can click on the "Book Now" button to book their tickets.
 
 ## Technologies Used
-Frontend: HTML, CSS, JavaScript, React
+Frontend: HTML, CSS, JavaScript, React and Chakra-Ui <br/>
 Backend: Not implemented
 
 ## Installation
