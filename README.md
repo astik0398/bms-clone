@@ -5,6 +5,7 @@ This project is a simplified clone of the popular ticket booking platform Book M
 # Table Of Content
 
 - [Features](#features)
+- [Screenshots](#screenshots)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -14,6 +15,9 @@ This project is a simplified clone of the popular ticket booking platform Book M
 Seat Map: Display a graphical representation of the cinema hall or venue with selectable seats.
 Seat Selection: Users can click on available seats to select them. Selected seats are highlighted.
 Book Now: After selecting seats, users can click on the "Book Now" button to book their tickets.
+
+## Screenshots
+![Screenshot (1173)](https://github.com/astik0398/bms-clone/assets/123920314/9f02f279-c134-4f05-a2aa-8cecaae3583f)
 
 ## Technologies Used
 Frontend: HTML, CSS, JavaScript, React and Chakra-Ui <br/>
