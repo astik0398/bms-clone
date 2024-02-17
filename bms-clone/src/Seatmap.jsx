@@ -5,22 +5,17 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 const Seatmap = ({tickets}) => {
 
-  console.log(tickets);
-  const container = document.querySelector(".container");
-  const seats = document.querySelectorAll(".row .seat:not(.occupied)");
+  // let lsData = JSON.parse(localStorage.getItem("lsData")) || []
 
-  function updateSelectedCount() {
-    const selectedSeats = document.querySelectorAll(".row .seat.selected");
-  }
+  let selectedSeats = [];
 
   function handleClick(e) {
     if (
       e.target.classList.contains("seat") &&
-      !e.target.classList.contains("occupied")
+      !e.target.classList.contains("occupied") 
     ) {
       e.target.classList.toggle("selected");
     }
-    updateSelectedCount();
   }
 
   const [matrix, setMatrix] = useState([
@@ -32,15 +27,11 @@ const Seatmap = ({tickets}) => {
     { row: "F", col: [1, 2, 3, 4, 5, 6].map(() => false) },
   ]);
 
-  let selectedSeats = [];
-
   function handleSeat(row, seat){
    
    let newArr = selectedSeats.filter(el=> el!=`${row}-${seat}`)
 
-   console.log(selectedSeats);
-
-   if(selectedSeats.length>tickets-1){
+   if(selectedSeats.length>tickets-1 && !selectedSeats.includes(`${row}-${seat}`)){
     alert('Maximum Tickets Reached !')
    }
   else if (!selectedSeats.includes(`${row}-${seat}`)) {
@@ -48,27 +39,29 @@ const Seatmap = ({tickets}) => {
   } else {
     selectedSeats = newArr
   }
+
+  localStorage.setItem("lsdata", [...selectedSeats]);
+
   }
 
   return (
 
     <>
     
-    <div onClick={handleClick} class="container">
-      <div style={{ margin: "auto" }} class="screen"></div>
+    <div  onClick={handleClick} className="container">
+      <div style={{ margin: "auto" }} className="screen"></div>
       <div>
-        {/* <p style={{ marginTop: "-40px" }}>All Eyes This Side Please!</p> */}
-
         <div style={{ width: "85%", margin: "auto" }}>
           {matrix?.map((item, index) => {
             return (
               <div
-                class="row"
+                className="row"
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
                   color: "white",
+                
                 }}
               >
                 <b>{item.row}</b>
@@ -97,17 +90,17 @@ const Seatmap = ({tickets}) => {
         </div>
       </div>
 
-      <ul class="showcase">
+      <ul className="showcase">
     <li>
-      <div class="seat"></div>
+      <div className="seat"></div>
       <small>Available</small>
     </li>
     <li>
-      <div class="seat selected"></div>
+      <div className="seat selected"></div>
       <small>Selected</small>
     </li>
     <li>
-      <div class="seat occupied"></div>
+      <div className="seat occupied"></div>
       <small>Occupied</small>
     </li>    
   </ul>
