@@ -24,7 +24,7 @@ Frontend: HTML, CSS, JavaScript, React and Chakra-Ui <br/>
 Backend: Not implemented
 
 ## Installation
-Clone the repository: git clone [https://github.com/your-repo.git](https://github.com/astik0398/bms-clone.git)
+Clone the repository: git clone [https://github.com/astik0398/bms-clone.git](https://github.com/astik0398/bms-clone.git)
 Install dependencies: npm install
 Start the development server: npm start
 
